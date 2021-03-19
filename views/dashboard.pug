@@ -1,0 +1,71 @@
+extends layout
+
+block content
+  include footer
+  .Closepanel.container-fluid#CloseMenu(onclick="Closemypanel()").hide
+  #HiddenPanel.hidden-panel.hide
+      span.hidden-panel-close(data-js='hidden-panel-close') Close
+      .hidden-panel-content
+        nav.hidden-panel-nav
+          h3(style='text-align: left;')
+            | NAVIGATION.
+          label#switch.switch
+            input#slider(type='checkbox' onchange='toggleTheme()')
+            span.slider.round
+          ul.mt-2
+            li.row
+              .col-1.pt-5.mb-4
+                i.lni.lni-home.force-display.main-home-btn
+              .col-10.text-left.pt-5.mb-4
+                a(onclick="dashboard()") dashboard  
+              .col-1.mb-4.pt-4
+                i.lni.lni-bolt.force-display.main-home-btn
+              .col-10.text-left.mb-4.pt-4
+                a(onclick="control()") Devices 
+              .col-1.mb-4.pt-4
+                i.lni.lni-user.force-display.main-home-btn
+              .col-10.text-left.mb-4.pt-4
+                a(onclick="profile()") Profile
+              .col-1.mb-4.pt-4
+                i.lni.lni-cog.force-display.main-home-btn
+              .col-10.text-left.mb-4.pt-4
+                a(onclick="setting()") Settings 
+              .col-1.mb-4.pt-4
+                i.lni.lni-exit
+              .col-10.text-left.mb-4.pt-4
+                a(href='/logout') logout                           
+         
+  main.container-fluid
+    .app-container.container-fluid.p-0
+      .row.main-header
+        .profile-img.col-2
+          .profile-img-contn
+            img(src="images/user.png", alt="User Image" loading="lazy" onclick="profile()")
+            span.notification-dot
+              i.lni.lni-dot
+        .void.col-8          
+          .container-fluid.pt-4
+            .date
+        .menu-btn.col-2.text-right#MenuIcon
+          button(type="button" data-js='menu-toggle').hamburger.hamburger--minus.menu-toggle
+            span.hamburger-box
+              span.hamburger-inner
+      .welcome-text.container-fluid.pl-0.pr-0.pt-4.dashboard
+        h4 Hello, 
+          span.thick.username #{username}
+        .sub-welcome-text
+    .app-container.container-fluid.p-0.control.hide
+      .pt-4
+        h4.username #{username} these are your devices
+    .app-container.container-fluid.p-0.profile.hide
+      .pt-4
+        h4.username #{username} this is your profile
+    .app-container.container-fluid.p-0.settings.hide
+      .pt-4
+        h4.username #{username} this is your setting
+        
+    
+       
+        
+      
+    

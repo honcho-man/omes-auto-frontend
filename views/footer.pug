@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  footer 
+    .footer.container-fluid.text-center
+      .row.p-3
+        .col-3
+          a(onclick="dashboard()")
+            i.lni.lni-home.hide
+            span.home.active-navigator Home
+        .col-3
+          a(onclick="control()")
+            i.lni.lni-bolt
+            span.devices.hide Devices
+        .col-3
+          a(onclick="profile()")
+            i.lni.lni-user
+            span.user.hide Profile
+        .col-3
+          a(onclick="setting()")
+            i.lni.lni-cog
+            span.setting.hide Settings
