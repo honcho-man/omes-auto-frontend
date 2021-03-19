@@ -31,13 +31,25 @@ block content
         h4 Signup          
     .container-fluid.form-parent.p-0.mt-4
       .form-container.off-canvas.col-xl-6.col-md-6.p-0
-        form.form-signin(role='form' action='auth' method='post')
+        form.form-signin(role='form' action='/login')
+          .form-group
+            label(for='Firstname') First name
+            input#Firstname.form-control(type='text' name='firstname' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='Lastname') Last name
+            input#Lastname.form-control(type='text' name='lastname' aria-required='true' aria-invalid='true')
           .form-group
             label(for='EmailAddress') Email Address
-            input#EmailAddress.form-control(type='email' name='EmailAddress' aria-required='true' aria-invalid='true' required='')
+            input#EmailAddress.form-control(type='email' name='EmailAddress' aria-required='true' aria-invalid='true')
           .form-group
-            label(for='EmailAddress') Password
-            input#password.form-control(type='password' name='password' aria-required='true' aria-invalid='true' required='')
+            label(for='Username') Username
+            input#Username.form-control(type='text' name='username' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='password') Password
+            input#password.form-control(type='password' name='password' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='password') Confirm Password
+            input#password.form-control(type='password' name='password' aria-required='true' aria-invalid='true')
           .row.hide
             .checkbox.col-6
               label
@@ -50,4 +62,4 @@ block content
               span sign up
           .pt-2
           span Already own an account?
-            a(href="/").ml-2 Login
+            a(href="/login").ml-2 Login

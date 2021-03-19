@@ -19,13 +19,58 @@ block content
               .col-12.text-left.mb-4.pt-4
                 a(href='/contact') contact
          
-  main.container-fluid
+  main.container-fluid.main-index
     .app-container.container-fluid.p-0
       .row.main-header
         .void.col-10
         .menu-btn.col-2.text-right#MenuIcon
-          button(type="button" data-js='menu-toggle').hamburger.hamburger--minus.menu-toggle
+          button(type="button" data-js='menu-toggle').main-burger.hamburger.hamburger--minus.menu-toggle
             span.hamburger-box
               span.hamburger-inner
       .welcome-text.container-fluid.pl-0.pr-0.pt-4
-        h4 Welcome to omes          
+        .text-center.welcome-headline
+          h3 introducing omes
+        .container-fluid.text-center
+          p.mb-4 Powered by the OMES Smart Home, we give you more control and more peace of mind at home or away.
+          a(href="/login") learn more
+    .scroll-down.text-center
+      i(onclick="location.href='#appTwo'").lni.lni-chevron-down
+  .container-fluid.app-container-2#appTwo.pt-3
+    span
+      h3 Learn More About 
+        strong OMES Smart Home
+    p OMES homeowners enjoy personalized smart home living experiences for any home, new construction or decades old. Interested in learning more about OMES? Simply fill out this form.
+    .container-fluid.form-parent.p-0.mt-4
+      .form-container.off-canvas.col-xl-6.col-md-6.p-0
+        form.form-signin(role='form')
+          .form-group
+            label(for='Firstname') First name
+              span.green *
+            input#Firstname.form-control(type='text' name='firstname' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='Lastname') Last name
+              span.green *
+            input#Lastname.form-control(type='text' name='lastname' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='EmailAddress') Email Address
+              span.green *
+            input#EmailAddress.form-control(type='email' name='EmailAddress' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='Phone') Phone Number
+              span.green *
+            input#Phone.form-control(type='tel' name='phone' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='Country') Country
+              span.green *
+            input#Country.form-control(type='text' name='country' aria-required='true' aria-invalid='true')
+          .form-group
+            label(for='State') State
+              span.green *
+            input#State.form-control(type='text' name='state' aria-required='true' aria-invalid='true')          
+          .text-center
+            button.cta(type="submit").text-center              
+              i.fa.fa-check
+              span.pl-2 SUBMIT
+          .notice
+            i.fa.fa-bell
+                  

@@ -4,25 +4,16 @@ var path = require('path');
 var session = require('express-session');
 
 var app = module.exports = express();
-/* GET home page. 
-app.get('/', function(req, res, next) {
-    res.render('index', { title: 'Welcome' });
-});
-app.get('/dashboard', function(req, res, next) {
-    res.render('dashboard', { title: 'Contact' });
-});
+/* GET home page. */
 
 app.get('/contact', function(req, res, next) {
     res.render('contact', { title: 'Contact' });
 });
 
-app.get('/login', function(req, res, next) {
-    res.render('login', { title: 'Contact' });
-});
 app.get('/signup', function(req, res, next) {
     res.render('signup', { title: 'Contact' });
 });
-*/
+
 // middleware
 
 app.set('view engine', 'pug');
@@ -95,7 +86,7 @@ function restrict(req, res, next) {
 }
 
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('index', { title: 'Welcome to OMES' });
 });
 
 app.get('/restricted', restrict, function(req, res) {
@@ -115,7 +106,7 @@ app.get('/login', function(req, res) {
 });
 app.get('/dashboard', function(req, res) {
     if (req.session.user) {
-        res.render('dashboard');
+        res.render('dashboard', { title: 'Dashboard' });
     } else {
         req.session.error = 'Access denied!';
         res.redirect('/login');

@@ -197,6 +197,11 @@ img {
     background-color: var(--color-primary);
 }
 
+.main-burger,
+.main-burger::after {
+    background-color: white !important;
+}
+
 .hamburger-inner {
     width: 20px !important;
 }
@@ -368,4 +373,53 @@ footer {
     display: flex;
     cursor: pointer;
     justify-content: center;
+}
+
+.welcome-headline h3 {
+    text-transform: uppercase;
+    font-weight: 500 !important;
+}
+
+.main-index {
+    font-size: larger;
+    color: var(--color-secondary);
+}
+
+.main-index a {
+    text-transform: capitalize;
+    border: 1px solid white;
+    padding: 10px;
+    color: var(--color-secondary);
+}
+
+.main-index a:hover {
+    text-transform: capitalize;
+    text-decoration: none;
+    border: 1px solid transparent !important;
+    padding: 10px;
+    background: var(--color-primary-gra);
+    color: var(--color-secondary);
+    transition: .50s;
+}
+
+.main-index {
+    position: relative;
+    background-image: url(/images/bg-1.jpg);
+    background-size: cover;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    padding-bottom: 15px;
+}
+
+.scroll-down i {
+    font-size: larger;
+    cursor: pointer;
+}
+
+.app-container-2 {
+    height: 100%;
 }
