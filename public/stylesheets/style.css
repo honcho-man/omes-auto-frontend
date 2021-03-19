@@ -180,6 +180,10 @@ img {
     cursor: pointer;
 }
 
+.menu-btn button {
+    background: transparent;
+}
+
 .sub-welcome-text,
 .sub-welcome-text-2 {
     font-size: medium;
@@ -194,7 +198,7 @@ img {
 .hamburger-inner::after,
 .hamburger-inner::before {
     height: 2px !important;
-    background-color: var(--color-primary);
+    background-color: var(--font-color);
 }
 
 .hamburger-inner {
@@ -212,10 +216,6 @@ img {
 .menu-btn {
     display: flex;
     justify-content: center;
-}
-
-.menu-btn button {
-    background: transparent !important;
 }
 
 .medium-small {
@@ -393,14 +393,15 @@ footer {
     border: 1px solid transparent !important;
     padding: 10px;
     background: var(--color-primary-gra);
-    color: var(--color-secondary);
+    color: white;
     transition: .50s;
 }
 
 .main-index {
     position: relative;
-    background-image: url(/images/bg-1.jpg);
-    background-size: cover;
+    /*background-image: url(/images/bg-1.jpg);
+    background-size: cover;*/
+    background: var(--color-primary-gra);
 }
 
 .scroll-down {

@@ -11,7 +11,7 @@ app.get('/contact', function(req, res, next) {
 });
 
 app.get('/signup', function(req, res, next) {
-    res.render('signup', { title: 'Contact' });
+    res.render('signup', { title: 'Sign Up' });
 });
 
 // middleware
@@ -100,7 +100,7 @@ app.get('/logout', function(req, res) {
     // destroy the user's session to log them out
     // will be re-created next request
     req.session.destroy(function() {
-        res.redirect('/');
+        res.redirect('/login');
     });
 });
 
@@ -120,7 +120,7 @@ app.post('/login', function(req, res) {
         if (user) {
             req.session.regenerate(function() {
                 req.session.user = user;
-                res.render('dashboard', { username: user.name });
+                res.render('dashboard', { title: 'Dashboard', username: user.name });
             });
         } else {
             res.redirect('login');
