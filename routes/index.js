@@ -104,16 +104,11 @@ app.get('/logout', function(req, res) {
     });
 });
 
+app.get('/dashboard', function(req, res) {
+    res.redirect('login');
+});
 app.get('/login', function(req, res) {
     res.render('login');
-});
-app.get('/dashboard', function(req, res) {
-    if (req.session.user) {
-        res.render('dashboard', { title: 'Dashboard' });
-    } else {
-        req.session.error = 'Access denied!';
-        res.redirect('/login');
-    }
 });
 app.post('/login', function(req, res) {
     authenticate(req.body.username, req.body.password, function(err, user) {
@@ -123,7 +118,7 @@ app.post('/login', function(req, res) {
                 res.render('dashboard', { title: 'Dashboard', username: user.name });
             });
         } else {
-            res.redirect('login');
+            res.render('login', { title: 'Login' });
         }
     });
 });

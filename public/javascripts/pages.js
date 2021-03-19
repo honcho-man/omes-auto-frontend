@@ -14,7 +14,7 @@ function dashboard() {
         closecontrol();
         closesetting();
     } else if (!Dashboard.hasClass('hide')) {
-        location.href = '/';
+        location.href = '/dashboard';
         closeprofile();
         closecontrol();
         closesetting();
