@@ -12,14 +12,14 @@ function toggleTheme() {
         innerBurger.removeClass('nightburger');
         innerBurger.addClass('dayburger');
         innerBurger.html(
-            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black;}</style>'
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black !important;}</style>'
         )
     } else {
         setTheme('theme-dark');
         innerBurger.addClass('nightburger');
         innerBurger.removeClass('dayburger');
         innerBurger.html(
-            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white;}</style>'
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white !important;}</style>'
         )
     }
 }

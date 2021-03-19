@@ -147,13 +147,13 @@ var innerBurger = $('.hamburger-inner');
         innerBurger.addClass('nightburger');
         innerBurger.removeClass('dayburger');
         innerBurger.html(
-            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white;}</style>'
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white !important;}</style>'
         )
     } else {
         innerBurger.removeClass('nightburger');
         innerBurger.addClass('dayburger');
         innerBurger.html(
-            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black;}</style>'
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black !important;}</style>'
         )
     }
 })();
