@@ -201,11 +201,11 @@ img {
 }
 
 .nightburger {
-    background: white;
+    background: white !important;
 }
 
 .dayburger {
-    background: black;
+    background: black !important;
 }
 
 .hamburger-inner {
