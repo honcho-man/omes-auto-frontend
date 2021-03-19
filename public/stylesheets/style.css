@@ -197,11 +197,6 @@ img {
     background-color: var(--color-primary);
 }
 
-.main-burger,
-.main-burger::after {
-    background-color: white !important;
-}
-
 .hamburger-inner {
     width: 20px !important;
 }
@@ -382,14 +377,14 @@ footer {
 
 .main-index {
     font-size: larger;
-    color: var(--color-secondary);
+    color: white;
 }
 
 .main-index a {
     text-transform: capitalize;
     border: 1px solid white;
     padding: 10px;
-    color: var(--color-secondary);
+    color: white;
 }
 
 .main-index a:hover {

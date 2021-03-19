@@ -15,6 +15,7 @@ $(document).ready(function() {
             stat = '<i class="fa fa-sun sunny"></i>';
         } else if (hr >= 17 && hr <= 24) {
             greet = 'Good evening';
+            format = 'PM';
             stat = '<i class="fa fa-moon dark"></i>';
         }
 
