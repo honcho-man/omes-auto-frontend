@@ -43,7 +43,8 @@ app.use(function(req, res, next) {
 
 var users = {
     oladokun: { name: 'oladokun' },
-    lara: { name: 'lara' }
+    lanre: { name: 'lanre' },
+    lekan: { name: 'lekan' }
 };
 
 // when you create a user, generate a salt
@@ -53,9 +54,11 @@ hash({ password: 'foobar' }, function(err, pass, salt, hash) {
     if (err) throw err;
     // store the salt & hash in the "db"
     users.oladokun.salt = salt;
-    users.lara.salt = salt;
+    users.lanre.salt = salt;
+    users.lekan.salt = salt;
     users.oladokun.hash = hash;
-    users.lara.hash = hash;
+    users.lanre.hash = hash;
+    users.lekan.salt = salt;
 });
 
 
