@@ -140,3 +140,20 @@ document.getElementById('formsigin').onsubmit = () => {
     return false;
 
 }*/
+var innerBurger = $('.hamburger-inner');
+
+(function() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        innerBurger.addClass('nightburger');
+        innerBurger.removeClass('dayburger');
+        innerBurger.html(
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white;}</style>'
+        )
+    } else {
+        innerBurger.removeClass('nightburger');
+        innerBurger.addClass('dayburger');
+        innerBurger.html(
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black;}</style>'
+        )
+    }
+})();

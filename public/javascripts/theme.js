@@ -3,17 +3,24 @@ function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
 }
-// function to set a given checkbox state to localstorage
-function setState(stateTheme) {
-    localStorage.setItem('state', stateTheme);
-    document.documentElement.className = stateTheme;
-}
+var innerBurger = $('.hamburger-inner');
+
 // function to toggle between light and dark theme
 function toggleTheme() {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-light');
+        innerBurger.removeClass('nightburger');
+        innerBurger.addClass('dayburger');
+        innerBurger.html(
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:black;}</style>'
+        )
     } else {
         setTheme('theme-dark');
+        innerBurger.addClass('nightburger');
+        innerBurger.removeClass('dayburger');
+        innerBurger.html(
+            '<style>.hamburger-inner::after,.hamburger-inner::before{background:white;}</style>'
+        )
     }
 }
 
@@ -21,7 +28,9 @@ function toggleTheme() {
 (function() {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
+        document.getElementById('slider').checked = false;
     } else {
         setTheme('theme-light');
+        document.getElementById('slider').checked = true;
     }
 })();

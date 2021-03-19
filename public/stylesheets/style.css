@@ -198,7 +198,14 @@ img {
 .hamburger-inner::after,
 .hamburger-inner::before {
     height: 2px !important;
-    background-color: var(--font-color);
+}
+
+.nightburger {
+    background: white;
+}
+
+.dayburger {
+    background: black;
 }
 
 .hamburger-inner {
