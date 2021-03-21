@@ -4,21 +4,15 @@ var Control = $('.control');
 var Setting = $('.settings');
 
 function dashboard() {
-    if (Dashboard.hasClass('hide')) {
-        Dashboard.removeClass('hide');
-        $('.home').addClass('active-navigator');
-        $('.home').removeClass('hide');
-        $('.lni-home').addClass('hide');
-        closeprofile();
-        Closepanelfornav();
-        closecontrol();
-        closesetting();
-    } else if (!Dashboard.hasClass('hide')) {
-        location.href = '/dashboard';
-        closeprofile();
-        closecontrol();
-        closesetting();
-    }
+
+    Dashboard.removeClass('hide');
+    $('.home').addClass('active-navigator');
+    $('.home').removeClass('hide');
+    $('.lni-home').addClass('hide');
+    closeprofile();
+    Closepanelfornav();
+    closecontrol();
+    closesetting();
 }
 
 function closedashboard() {

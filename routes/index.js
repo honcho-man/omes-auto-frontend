@@ -2,10 +2,13 @@ var express = require('express');
 var hash = require('pbkdf2-password')()
 var path = require('path');
 var session = require('express-session');
-
 var app = module.exports = express();
 /* GET home page. */
-
+app.get('/test', (req, res) => {
+    const animal = 'alligator';
+    // Send a text/html file back with the word 'alligator' repeated 1000 times
+    res.send(animal.repeat(1000));
+});
 app.get('/contact', function(req, res, next) {
     res.render('contact', { title: 'Contact' });
 });
@@ -104,13 +107,20 @@ app.get('/logout', function(req, res) {
     });
 });
 
-app.get('/dashboard', function(req, res) {
-    res.redirect('login');
+app.get('/dashboard', function(req, res, user) {
+    authenticate(req.body.username, req.body.password, function(err, user) {
+        if (user) {
+            req.session.user = user;
+            res.render('dashboard', { title: 'Dashboard', username: user.name });
+        } else {
+            res.send('Wahoo! restricted area, click to <a href="/login">login</a>');
+        }
+    });
 });
 app.get('/login', function(req, res) {
-    res.render('login');
+    res.render('login', { title: 'Login' });
 });
-app.post('/login', function(req, res) {
+app.post('/dashboard', function(req, res) {
     authenticate(req.body.username, req.body.password, function(err, user) {
         if (user) {
             req.session.regenerate(function() {
@@ -118,7 +128,7 @@ app.post('/login', function(req, res) {
                 res.render('dashboard', { title: 'Dashboard', username: user.name });
             });
         } else {
-            res.render('login', { title: 'Login' });
+            res.redirect('login', { title: 'Login' });
         }
     });
 });
