@@ -23,7 +23,7 @@ $(document).ready(function() {
         var s = ndate.getSeconds().toString();
 
         if (h < 12) {
-            h = "0" + h;
+            h = h;
             $("h3.day-message").html(greet);
         } else if (h < 18) {
             $("h3.day-message").html(greet);
@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
 
         $('.date').html(h + ' ' + ":" + ' ' + m + ' ' + ":" + ' ' + s + ' ' + format);
-        $('.sub-welcome-text').html(greet + ' ' + stat + ', ' + 'welcome back.')
+        $('.sub-welcome-text').html(greet + ' ' + stat + ' ' + 'welcome back.')
     }
     setInterval(dateTime, 1000);
 });

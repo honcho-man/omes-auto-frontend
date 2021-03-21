@@ -1,8 +1,9 @@
 extends layout
 
 block content
+  include scrollTop  
   .Closepanel.container-fluid#CloseMenu(onclick="Closemypanel()").hide
-  #HiddenPanel.hidden-panel.hide
+  #HiddenPanel.hidden-panel.hide.gra
       span.hidden-panel-close(data-js='hidden-panel-close') Close
       .hidden-panel-content
         nav.hidden-panel-nav
@@ -34,8 +35,8 @@ block content
           p.mb-4 Powered by the OMES Smart Home, we give you more control and more peace of mind at home or away.
           a(href="/login") learn more
     .scroll-down.text-center
-      i(onclick="location.href='#appTwo'").lni.lni-chevron-down
-  .container-fluid.app-container-2#appTwo.pt-3
+      i(onclick="goDown()").lni.lni-chevron-down
+  .container-fluid.app-container-2.appTwo.pt-3
     span
       h3 Learn More About 
         strong OMES Smart Home

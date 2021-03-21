@@ -21,6 +21,7 @@ img {
     --color-secondary: #ffffff;
     --color-accent: #fd6f53;
     --font-color: #000000;
+    --font-color-inv: #ffffff;
     --color-primary-gra: linear-gradient(0deg, #87c198 0%, #0367cc 39%);
 }
 
@@ -29,6 +30,7 @@ img {
     --color-secondary: #2a2c2d;
     --color-accent: #12cdea;
     --font-color: #ffffff;
+    --font-color-inv: #000000;
     --color-primary-gra: linear-gradient(0deg, #0367cc 0%, #17ed90 39%);
 }
 
@@ -346,6 +348,10 @@ img {
     margin-right: 10px;
 }
 
+#Eye {
+    color: var(--font-color-inv);
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -425,4 +431,44 @@ footer {
 
 .app-container-2 {
     height: 100%;
+}
+
+.invisibile {
+    visibility: hidden;
+}
+
+.visibile {
+    visibility: hidden;
+}
+
+.gra {
+    background: var(--color-primary-gra);
+}
+
+.top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1em 1em 0;
+    border-radius: 50%;
+    padding: 1%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    background: var(--color-primary-gra) !important;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }

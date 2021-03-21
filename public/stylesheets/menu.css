@@ -10,6 +10,7 @@
     
     body.panel-open {
         left: -250px;
+        overflow-y: hidden;
     }
     
     .container {

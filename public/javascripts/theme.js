@@ -34,3 +34,9 @@ function toggleTheme() {
         document.getElementById('slider').checked = true;
     }
 })();
+
+function goDown() {
+    $('html, body').animate({
+        scrollTop: $('.appTwo').offset().top
+    }, 1000)
+};
