@@ -34,10 +34,10 @@ block content
         form#formsignin.form-signin(role='form' action="/dashboard" method='post')
           .form-group
             label(for='Username') Username
-            input#Username.form-control(type='text' name='username' aria-required='true' aria-invalid='true' required='')
+            input#Username.form-control(type='text' name='username' aria-required='true' aria-invalid='true' required)
           .form-group.passwordcontn
             label(for='password') Password
-            input#password.form-control(type='password' name='password' aria-required='true' aria-invalid='true' autocomplete="on" required='')
+            input#password.form-control(type='password' name='password' aria-required='true' aria-invalid='true' autocomplete="on" required)
             i(onclick="showPassword()" type="checkbox" id="Eye").fa.fa-eye.eyes
           .row
             .checkbox.col-6
