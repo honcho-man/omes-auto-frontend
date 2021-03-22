@@ -61,7 +61,7 @@ hash({ password: 'foobar' }, function(err, pass, salt, hash) {
     users.lekan.salt = salt;
     users.oladokun.hash = hash;
     users.lanre.hash = hash;
-    users.lekan.salt = salt;
+    users.lekan.hash = hash;
 });
 
 
@@ -128,7 +128,7 @@ app.post('/dashboard', function(req, res) {
                 res.render('dashboard', { title: 'Dashboard', username: user.name });
             });
         } else {
-            res.redirect('login', { title: 'Login' });
+            res.render('login', { title: 'Login' });
         }
     });
 });
