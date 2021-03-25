@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "nodemon ./bin/www"
+        "start": "nodemon ./bin/www -e pug,css,png,jpeg,jpg -w ./views/dashboard"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
