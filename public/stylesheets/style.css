@@ -3,13 +3,14 @@
 body {
     position: relative;
     font-family: 'Montserrat', sans-serif !important;
-    height: 100vh;
+    height: 100%;
 }
 
 main {
     min-height: 100%;
     margin: 0 !important;
     padding: 15px !important;
+    position: relative;
 }
 
 img {
@@ -18,11 +19,13 @@ img {
 
 .theme-light {
     --color-primary: #0060df;
-    --color-secondary: #ffffff;
+    --color-secondary: #f9f9f9;
+    --color-secondary-semi: #ffffff;
     --color-accent: #fd6f53;
     --font-color: #000000;
     --font-color-inv: #ffffff;
     --color-primary-gra: linear-gradient(0deg, #87c198 0%, #0367cc 39%);
+    --shadow: #00000034;
 }
 
 .theme-dark {
@@ -30,8 +33,10 @@ img {
     --color-secondary: #2a2c2d;
     --color-accent: #12cdea;
     --font-color: #ffffff;
+    --color-secondary-semi: #3a3b3b;
     --font-color-inv: #000000;
     --color-primary-gra: linear-gradient(0deg, #0367cc 0%, #17ed90 39%);
+    --shadow: #ffffff34;
 }
 
 .body-theme {
@@ -44,6 +49,22 @@ img {
     background: var(--color-primary);
 }
 
+.force-display {
+    display: block !important;
+}
+
+.main-home-btn {
+    padding-top: 3px;
+}
+
+.main-header>div {
+    padding-top: 15px;
+}
+
+.username {
+    text-transform: capitalize;
+}
+
 
 /* The switch - the box around the slider */
 
@@ -54,16 +75,47 @@ img {
     height: 34px;
 }
 
-.force-display {
-    display: block !important;
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.main-home-btn {
-    padding-top: 3px;
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
-.username {
-    text-transform: capitalize;
+.slider:before {
+    margin-left: 3px !important;
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url('/images/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -187,9 +239,13 @@ img {
 }
 
 .sub-welcome-text,
-.sub-welcome-text-2 {
-    font-size: medium;
+.username {
+    font-size: 1.3rem;
     font-weight: 600;
+}
+
+.sub-sub-welcome-text {
+    font-size: 1.2em;
 }
 
 .hamburger-box {
@@ -353,7 +409,7 @@ img {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font: x-large;
@@ -362,6 +418,7 @@ footer {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     background: var(--color-primary-gra);
+    z-index: 1000;
 }
 
 .hidden-panel {
@@ -471,4 +528,84 @@ footer {
 .hidden {
     visibility: hidden;
     opacity: 0;
+}
+
+.profile {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-secondary);
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.go-back-btn {
+    background: transparent !important;
+    background-color: transparent !important;
+    outline: none;
+    border: none;
+    font-size: x-large;
+}
+
+.page-headline {
+    font-weight: bold;
+}
+
+.main-profile {
+    border-radius: 5px;
+    background-color: var(--color-secondary-semi);
+    box-shadow: 0 0 7px var(--shadow);
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.profile-sq-image {
+    padding-left: 35px !important;
+}
+
+.sq-image img {
+    width: 100%;
+}
+
+.sq-image {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.user-stat {
+    padding-top: 15px !important;
+}
+
+.user-details a {
+    color: crimson;
+    text-decoration: none;
+}
+
+.user-details a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+.user-stat label {
+    box-shadow: 0 0 15px var(--shadow);
+    border-radius: 20px;
+}
+
+.bt-hr {
+    text-align: center;
+}
+
+.bt-hr hr {
+    width: 90%;
+    border-top: 1px solid var(--shadow);
+}
+
+.profile-form input {
+    background-color: var(--color-secondary);
+    border: none;
+    border-bottom: 2px solid var(--shadow);
+    color: var(--font-color);
+    text-transform: capitalize;
+    box-shadow: inset 0 0 1px var(--shadow);
 }

@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/hamburgers/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/font-awesome')));
+app.use(express.static(path.join(__dirname, 'node_modules/date-and-time/')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -39,8 +39,9 @@ $(document).ready(function() {
             m = "0" + m;
         }
 
-        $('.date').html(h + ' ' + ":" + ' ' + m + ' ' + ":" + ' ' + s + ' ' + format);
-        $('.sub-welcome-text').html(greet + ' ' + stat + ' ' + 'welcome back.')
+        $('.clock').html(h + ' ' + ":" + ' ' + m + ' ' + ":" + ' ' + s + ' ' + format);
+        $('.sub-welcome-text').html(greet + ' ' + stat + ' ')
+        $('.sub-sub-welcome-text').html('Welcome back.')
     }
     setInterval(dateTime, 1000);
 });
@@ -157,3 +158,18 @@ var innerBurger = $('.hamburger-inner');
         )
     }
 })();
+
+let date_ob = new Date();
+
+// current date
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var day = days[date_ob.getDay()];
+// current month
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var month = months[date_ob.getMonth()];
+
+// current year
+let year = date_ob.getFullYear();
+
+// prints date in YYYY-MM-DD format
+$('.date').html(day + ", " + month + ' ' + year);

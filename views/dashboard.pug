@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  include footer
   .Closepanel.container-fluid#CloseMenu(onclick="Closemypanel()").hide
   #HiddenPanel.hidden-panel.hide
       span.hidden-panel-close(data-js='hidden-panel-close') Close
@@ -35,34 +34,63 @@ block content
               .col-10.text-left.mb-4.pt-4
                 a(href='/logout') logout                           
          
-  main.container-fluid
+  main.container-fluid.p-lg-5.p-xl-5
     .app-container.container-fluid.p-0
       .row.main-header
-        .profile-img.col-2
+        .profile-img.col-2.d-lg-flex.d-xl-flex.justify-content-center
           .profile-img-contn
             img(src="images/user.png", alt="User Image" loading="lazy" onclick="profile()")
             span.notification-dot
               i.lni.lni-dot
         .void.col-8          
-          .container-fluid.pt-4
+          .container-fluid
             .date
+            .clock
         .menu-btn.col-2.text-right#MenuIcon
           button(type="button" data-js='menu-toggle').hamburger.hamburger--minus.menu-toggle
             span.hamburger-box
               span.hamburger-inner
       .welcome-text.container-fluid.pl-0.pr-0.pt-4.dashboard
-        h4 Hello 
-          span.thick.username #{username}, sup!
-        .sub-welcome-text
+        span.thick.username.sub-welcome-text 
+        span.thick.username #{username},
+        .sub-sub-welcome-text
     .app-container.container-fluid.p-0.control.hide
       .pt-4
         h4.username #{username} these are your devices
-    .app-container.container-fluid.p-0.profile.hide
-      .pt-4
-        h4.username #{username} this is your profile
+    .app-container.p-0.profile.hide.p-4
+      button(onclick="dashboard()").go-back-btn.p-0.pb-3
+        i.lni.lni-arrow-left
+      h4.page-headline My Profile
+      p You are the main user.
+      .main-profile.pt-3
+        .row
+          .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0
+            .sq-image
+              img(src="images/user.png", alt="")
+          .col-4.user-details.pt-3
+            p.username.profile-username #{username}
+            p.user-id User ID:
+            a(href="#" class="red") Remove
+          .col-4.user-stat
+            label#switchPro.switchPro
+              input#sliderPro.stt(type='checkbox')
+              span.sliderPro.roundPro
+        .bt-hr.pb-2
+          hr        
+        form(action="#" method="post").profile-form.pb-5.p-2
+          label(for="Name").container-fluid Name
+            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Name" value=username disabled)
+          label(for="Phone").container-fluid Phone
+            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Phone" value=phone disabled)
+          label(for="Email").container-fluid Email
+            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Email" value=email disabled)
+          .text-center.container-fluid.pt-4
+            button(type="submit") Edit
+              i.lni.lni-pen
     .app-container.container-fluid.p-0.settings.hide
       .pt-4
         h4.username #{username} this is your setting page
+  include footer
         
     
        

@@ -2,7 +2,7 @@
     body {
         position: relative;
         font-family: 'Montserrat', sans-serif;
-        height: 100vh;
+        height: 100%;
     }
     main {
         padding: 20px !important;

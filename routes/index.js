@@ -45,9 +45,9 @@ app.use(function(req, res, next) {
 // dummy database
 
 var users = {
-    oladokun: { name: 'oladokun' },
-    lanre: { name: 'lanre' },
-    lekan: { name: 'lekan' }
+    oladokun: { name: 'oladokun', phone: '08020309603', email: 'oladokun@gmail.com' },
+    lanre: { name: 'lanre', phone: '08102069323', email: 'lanre.ola@gmail.com' },
+    lekan: { name: 'lekan', phone: '08078004566', email: 'lekan.ola@gmail.com' }
 };
 
 // when you create a user, generate a salt
@@ -111,7 +111,7 @@ app.get('/dashboard', function(req, res, user) {
     authenticate(req.body.username, req.body.password, function(err, user) {
         if (user) {
             req.session.user = user;
-            res.render('dashboard', { title: 'Dashboard', username: user.name });
+            res.render('dashboard', { title: 'Dashboard', username: user.name, phone: user.phone, email: user.email });
         } else {
             res.send('Wahoo! restricted area, click to <a href="/login">login</a>');
         }
@@ -125,7 +125,7 @@ app.post('/dashboard', function(req, res) {
         if (user) {
             req.session.regenerate(function() {
                 req.session.user = user;
-                res.render('dashboard', { title: 'Dashboard', username: user.name });
+                res.render('dashboard', { title: 'Dashboard', username: user.name, phone: user.phone, email: user.email });
             });
         } else {
             res.render('login', { title: 'Login' });

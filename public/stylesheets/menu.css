@@ -88,11 +88,12 @@
     .hidden-panel {
         color: white !important;
         font-size: 0.875rem;
-        height: 100%;
+        height: 100vh;
         position: absolute;
         right: -250px;
         top: 0;
         width: 250px;
+        overflow-y: scroll;
     }
     
     .hidden-panel a {
@@ -120,7 +121,6 @@
     
     .hidden-panel-content {
         padding: 15px;
-        position: fixed;
         width: 250px;
     }
     
