@@ -86,3 +86,7 @@ function profilemodal() {
 function cancelprofilemodal() {
     $('.cosmo').removeClass('force-display');
 }
+
+function notice() {
+    $('.form-notice').removeClass('hide');
+}

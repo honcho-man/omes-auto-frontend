@@ -57,6 +57,10 @@ img {
     padding-top: 3px;
 }
 
+.main-index-page {
+    height: 100vh;
+}
+
 .main-header>div {
     padding-top: 15px;
 }

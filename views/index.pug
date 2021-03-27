@@ -21,7 +21,7 @@ block content
                 a(href='/contact') contact
          
   main.container-fluid.main-index
-    .app-container.container-fluid.p-0
+    .app-container.container-fluid.p-0.main-index-page
       .row.main-header
         .void.col-10
         .menu-btn.col-2.text-right#MenuIcon
@@ -73,5 +73,5 @@ block content
               i.fa.fa-check
               span.pl-2 SUBMIT
           .notice
-            i.fa.fa-bell
-                  
+            i.fa.fa-exclamation-circle(onclick="notice()")
+            span.ml-2.hide.form-notice  lorem ipsum                
