@@ -78,3 +78,11 @@ function closesetting() {
     $('.setting').addClass('hide');
     $('.lni-cog').removeClass('hide');
 }
+
+function profilemodal() {
+    $('.cosmo').addClass('force-display');
+}
+
+function cancelprofilemodal() {
+    $('.cosmo').removeClass('force-display');
+}

@@ -574,12 +574,13 @@ footer {
 }
 
 .user-stat {
-    padding-top: 15px !important;
+    padding-top: 50px !important;
 }
 
 .user-details a {
     color: crimson;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .user-details a:hover {
@@ -608,4 +609,73 @@ footer {
     color: var(--font-color);
     text-transform: capitalize;
     box-shadow: inset 0 0 1px var(--shadow);
+}
+
+#ProfileEmail {
+    text-transform: none;
+}
+
+.profile-form button {
+    width: 60%;
+    color: var(--font-color-inv);
+    background: var(--color-primary-gra);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--shadow);
+    transition: .50s;
+}
+
+.profile-form button:hover {
+    box-shadow: 0 0 30px var(--shadow);
+    transition: .50s;
+}
+
+.profile-edit {
+    border-left: 1px solid var(--font-color-inv);
+}
+
+
+/*modals css*/
+
+.cosmo {
+    width: 100%;
+    height: 100vh;
+    background: #00000050;
+    position: fixed;
+    top: 0;
+    z-index: 1500;
+    padding-top: 50%;
+    transition: .50s;
+}
+
+.cosmo-row {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-modal {
+    background: var(--color-secondary);
+    border-radius: 8px;
+    transition: 1s;
+}
+
+.profile-modal button {
+    color: var(--font-color-inv);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.cancel {
+    background-color: crimson !important;
+}
+
+.proceed {
+    background: var(--color-primary-gra) !important;
+}
+
+.display {
+    display: block;
 }

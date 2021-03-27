@@ -67,29 +67,34 @@ block content
           .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0
             .sq-image
               img(src="images/user.png", alt="")
-          .col-4.user-details.pt-3
+          .col-4.user-details.pt-2
             p.username.profile-username #{username}
-            p.user-id User ID:
-            a(href="#" class="red") Remove
+            p.user-id.pb-0.mb-0 User ID:
+            a(onclick="profilemodal()" class="red") Remove
           .col-4.user-stat
             label#switchPro.switchPro
               input#sliderPro.stt(type='checkbox')
               span.sliderPro.roundPro
         .bt-hr.pb-2
           hr        
-        form(action="#" method="post").profile-form.pb-5.p-2
+        form(action="#").profile-form.pb-5.p-2
           label(for="Name").container-fluid Name
-            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Name" value=username disabled)
+            input.container-fluid.mt-3.mb-3.p-3(type="text" name="Name" value=username disabled)
           label(for="Phone").container-fluid Phone
-            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Phone" value=phone disabled)
+            input.container-fluid.mt-3.mb-3.p-3(type="text" name="Phone" value=phone disabled)
           label(for="Email").container-fluid Email
-            input.container-fluid.mt-3.mb-3.p-2(type="text" name="Email" value=email disabled)
+            input.container-fluid#ProfileEmail.mt-3.mb-3.p-3(type="text" name="Email" value=email disabled)
           .text-center.container-fluid.pt-4
-            button(type="submit") Edit
-              i.lni.lni-pen
+            button.text-center.p-2
+              .row
+                .col-8 
+                  span Edit
+                .col-4.profile-edit
+                  i.fa.fa-edit
     .app-container.container-fluid.p-0.settings.hide
       .pt-4
         h4.username #{username} this is your setting page
+  include modals
   include footer
         
     
