@@ -57,6 +57,7 @@ function closeprofile() {
     $('.user').removeClass('active-navigator');
     $('.user').addClass('hide');
     $('.lni-user').removeClass('hide');
+    cancelProfileInner();
 }
 
 
@@ -89,4 +90,30 @@ function cancelprofilemodal() {
 
 function notice() {
     $('.form-notice').removeClass('hide');
+}
+
+function notify() {
+    $('.profile-page').addClass('slide-out-left');
+    $('.notification-page').addClass('slide-in-right');
+    $('.profile-page').removeClass('slide-in-left');
+    $('.notification-page').removeClass('slide-out-right');
+}
+
+function unnotify() {
+    $('.profile-page').addClass('slide-in-left');
+    $('.notification-page').addClass('slide-out-right');
+    $('.profile-page').removeClass('slide-out-left');
+    $('.notification-page').removeClass('slide-in-right');
+}
+
+function cancelProfileInner() {
+    $('.profile-page').removeClass('slide-in-left');
+    $('.notification-page').removeClass('slide-out-right');
+    $('.profile-page').removeClass('slide-out-left');
+    $('.notification-page').removeClass('slide-in-right');
+}
+
+function openNotify() {
+    profile();
+    notify();
 }
