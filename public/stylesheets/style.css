@@ -650,6 +650,7 @@ footer {
     z-index: 1500;
     padding-top: 50%;
     transition: .50s;
+    overflow-y: scroll;
 }
 
 .cosmo-row {
@@ -661,6 +662,7 @@ footer {
     background: var(--color-secondary);
     border-radius: 8px;
     transition: 1s;
+    margin-bottom: 100px;
 }
 
 .profile-modal button {
@@ -682,4 +684,76 @@ footer {
 
 .display {
     display: block;
+}
+
+.notification-dot svg {
+    color: var(--font-color-inv);
+    background: var(--color-primary);
+    border-radius: 60px;
+    padding: 1px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: -11%;
+}
+
+.messages {
+    float: right;
+    background: transparent !important;
+    background-color: transparent !important;
+    outline: none;
+    border: none;
+    font-size: x-large;
+}
+
+.notification-page {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    background-color: var(--color-secondary);
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.search-chat {
+    width: 100%;
+    background: var(--color-secondary-semi);
+    background-color: var(--color-secondary);
+    padding-left: 30px !important;
+}
+
+.search-chat-mag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px;
+    transform: translateX(18px);
+}
+
+#myUL {
+    padding-inline-start: 0;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+#myUL li {
+    list-style: none;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--color-secondary-semi);
+    box-shadow: 0 0 5px var(--shadow);
+    margin-bottom: 25px;
+}
+
+.add-user-btn {
+    width: 38px !important;
+    border-radius: 50% !important;
+    height: 38px;
 }

@@ -40,8 +40,9 @@ block content
         .profile-img.col-2.d-lg-flex.d-xl-flex.justify-content-center
           .profile-img-contn
             img(src="images/user.png", alt="User Image" loading="lazy" onclick="profile()")
-            span.notification-dot
-              i.lni.lni-dot
+            .notification-dot
+              a(title="You have a new message!" onclick="openNotify()")
+                i(onclick="openNotify()").fa.fa-dot
         .void.col-8          
           .container-fluid
             .date
@@ -58,39 +59,61 @@ block content
       .pt-4
         h4.username #{username} these are your devices
     .app-container.p-0.profile.hide.p-4
-      button(onclick="dashboard()").go-back-btn.p-0.pb-3
-        i.lni.lni-arrow-left
-      h4.page-headline My Profile
-      p You are the main user.
-      .main-profile.pt-3
+      .profile-page
+        button(onclick="dashboard()").go-back-btn.p-0.pb-3
+          i.lni.lni-arrow-left
+        button(onclick="notify()").messages
+          i.fa.fa-envelope
+        h4.page-headline My Profile
+        p You are the main user.
+        .main-profile.pt-3
+          .row
+            .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0
+              .sq-image
+                img(src="images/user.png", alt="")
+            .col-4.user-details.pt-4
+              p.username.profile-username #{username}
+              p.user-id.pb-0.mb-0 User ID:
+            .col-4.user-stat
+              label#switchPro.switchPro
+                input#sliderPro.stt(type='checkbox')
+                span.sliderPro.roundPro
+          .bt-hr.pb-2
+            hr        
+          form(action="#").profile-form.pb-5.p-2
+            label(for="Name").container-fluid Name
+              input.container-fluid.mt-3.mb-3.p-3(type="text" name="Name" value=username disabled)
+            label(for="Phone").container-fluid Phone
+              input.container-fluid.mt-3.mb-3.p-3(type="text" name="Phone" value=phone disabled)
+            label(for="Email").container-fluid Email
+              input.container-fluid#ProfileEmail.mt-3.mb-3.p-3(type="text" name="Email" value=email disabled)
+            .text-center.container-fluid.pt-4
+              .row.p-0.m-0
+                .col-10.p-0.m-0
+                  button.text-center.p-2
+                    .row
+                      .col-8 
+                        span Edit
+                      .col-4.profile-edit
+                        i.fa.fa-edit
+                .col-2.p-0.m-0
+                  button.add-user-btn(title="Add a new user" onclick="profilemodal()")
+                    i.fa.fa-user-plus
+      .notification-page.p-4
         .row
-          .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0
-            .sq-image
-              img(src="images/user.png", alt="")
-          .col-4.user-details.pt-2
-            p.username.profile-username #{username}
-            p.user-id.pb-0.mb-0 User ID:
-            a(onclick="profilemodal()" class="red") Remove
-          .col-4.user-stat
-            label#switchPro.switchPro
-              input#sliderPro.stt(type='checkbox')
-              span.sliderPro.roundPro
-        .bt-hr.pb-2
-          hr        
-        form(action="#").profile-form.pb-5.p-2
-          label(for="Name").container-fluid Name
-            input.container-fluid.mt-3.mb-3.p-3(type="text" name="Name" value=username disabled)
-          label(for="Phone").container-fluid Phone
-            input.container-fluid.mt-3.mb-3.p-3(type="text" name="Phone" value=phone disabled)
-          label(for="Email").container-fluid Email
-            input.container-fluid#ProfileEmail.mt-3.mb-3.p-3(type="text" name="Email" value=email disabled)
-          .text-center.container-fluid.pt-4
-            button.text-center.p-2
-              .row
-                .col-8 
-                  span Edit
-                .col-4.profile-edit
-                  i.fa.fa-edit
+          .col-2.text-center
+            button(onclick="unnotify()").go-back-btn.p-0.pb-3
+              i.lni.lni-arrow-left
+          .col-10 
+            input.form-control.search-chat#myInput(type='text' onkeyup='SearchChat()' placeholder='Search conversations')
+            span.search-chat-mag
+              i.lni.lni-search
+        .container-fluid.m-0.p-0.cl.mt-3
+          ul#myUL
+            li
+              span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            li
+              span House Group Chat
     .app-container.container-fluid.p-0.settings.hide
       .pt-4
         h4.username #{username} this is your setting page

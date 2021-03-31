@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .container
+      h1 Please send your request
+      form.email-form
+        .form-group
+          label(for='exampleInputEmail1') Email address
+          input#email.form-control(type='email' name="email" aria-describedby='emailHelp' placeholder='Enter email')
+          small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+        .form-group
+          label(for='exampleInputEmail1') Subject
+          input#subject.form-control(type='text' name="subject" aria-describedby='emailHelp' placeholder='Subject')
+        .form-group
+          label(for='exampleInputPassword1') Message
+          textarea#message.form-control(placeholder='Message' name="message")
+        button.btn.btn-primary#submitmail 
+          .formstat Submit
+        .loading
+        .error-msg
+        .sent-message
+                

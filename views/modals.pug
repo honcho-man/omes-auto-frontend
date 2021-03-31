@@ -2,11 +2,16 @@
 block content
   .cosmo.hide
     .cosmo-row
-      .profile-modal.col-7.text-center.p-3
-        p Are you sure you want to delete this account?
-        .container-fluid.text-center
-          .row
-            .col-6
-              button(onclick="window.location.reload()").proceed Yes
-            .col-6
-              button(onclick="cancelprofilemodal()").cancel No
+      .profile-modal.col-10.text-center.p-3
+          label(for="#NewUser").text-left
+            p.thick New User's Email Address:
+             small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else. (An invite link will be sent to the new user's email, which will take them to a page where they can sign up as part of the household)
+          input.form-control#NewUser.search-chat(type="email" name="NewUserEmail" placeholder="Email Address")
+          .container-fluid.text-center
+            .row.p-0.m-0.pt-3
+              .col-6.p-0.m-0
+                button.proceed
+                  .proceed-new-user Send
+              .col-6.p-0.m-0
+                button(onclick="cancelprofilemodal()").cancel.ml-2 Cancel
+          
