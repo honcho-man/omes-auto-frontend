@@ -1,5 +1,5 @@
 var Dashboard = $('.dashboard');
-var Profile = $('.profile');
+var Profile = $('.users');
 var Control = $('.control');
 var Setting = $('.settings');
 
@@ -9,7 +9,7 @@ function dashboard() {
     $('.home').addClass('active-navigator');
     $('.home').removeClass('hide');
     $('.lni-home').addClass('hide');
-    closeprofile();
+    closeusers();
     Closepanelfornav();
     closecontrol();
     closesetting();
@@ -28,7 +28,7 @@ function control() {
     $('.devices').removeClass('hide');
     $('.lni-bolt').addClass('hide');
     closedashboard();
-    closeprofile();
+    closeusers();
     closesetting();
     Closepanelfornav();
 
@@ -41,7 +41,7 @@ function closecontrol() {
     $('.lni-bolt').removeClass('hide');
 }
 
-function profile() {
+function users() {
     Profile.removeClass('hide');
     $('.user').addClass('active-navigator');
     $('.user').removeClass('hide');
@@ -52,12 +52,11 @@ function profile() {
     Closepanelfornav();
 }
 
-function closeprofile() {
+function closeusers() {
     Profile.addClass('hide');
     $('.user').removeClass('active-navigator');
     $('.user').addClass('hide');
     $('.lni-user').removeClass('hide');
-    cancelProfileInner();
 }
 
 
@@ -68,7 +67,7 @@ function setting() {
     $('.lni-cog').addClass('hide');
     closedashboard();
     closecontrol();
-    closeprofile();
+    closeusers();
     Closepanelfornav();
 
 }
@@ -78,6 +77,8 @@ function closesetting() {
     $('.setting').removeClass('active-navigator');
     $('.setting').addClass('hide');
     $('.lni-cog').removeClass('hide');
+    cancelProfileInner();
+
 }
 
 function profilemodal() {
@@ -92,28 +93,54 @@ function notice() {
     $('.form-notice').removeClass('hide');
 }
 
+function profile() {
+    $('.profile-page').addClass('slide-in-right');
+    $('.wrapper').addClass('slide-out-left');
+    $('.profile-page').removeClass('slide-out-right');
+    $('.wrapper').removeClass('slide-in-left');
+}
+
+function gobacktosettingsfromprofile() {
+    $('.profile-page').addClass('slide-out-right');
+    $('.wrapper').addClass('slide-in-left');
+    $('.profile-page').removeClass('slide-in-right');
+    $('.wrapper').removeClass('slide-out-left');
+}
+
+function prolify() {
+    setting();
+    profile();
+}
+
+
 function notify() {
-    $('.profile-page').addClass('slide-out-left');
+    $('.page-wrapper-contn').addClass('slide-out-left');
     $('.notification-page').addClass('slide-in-right');
-    $('.profile-page').removeClass('slide-in-left');
+    $('.page-wrapper-contn').removeClass('slide-in-left');
     $('.notification-page').removeClass('slide-out-right');
 }
 
 function unnotify() {
-    $('.profile-page').addClass('slide-in-left');
+    $('.page-wrapper-contn').addClass('slide-in-left');
     $('.notification-page').addClass('slide-out-right');
-    $('.profile-page').removeClass('slide-out-left');
+    $('.page-wrapper-contn').removeClass('slide-out-left');
     $('.notification-page').removeClass('slide-in-right');
 }
 
 function cancelProfileInner() {
-    $('.profile-page').removeClass('slide-in-left');
+    $('.page-wrapper-contn').removeClass('slide-in-left');
     $('.notification-page').removeClass('slide-out-right');
-    $('.profile-page').removeClass('slide-out-left');
+    $('.page-wrapper-contn').removeClass('slide-out-left');
     $('.notification-page').removeClass('slide-in-right');
+    $('.profile-page').removeClass('slide-out-right');
+    $('.profile-page').removeClass('slide-in-left');
+    $('.profile-page').removeClass('slide-in-right');
+    $('.wrapper').removeClass('slide-out-left');
+    $('.wrapper').removeClass('slide-in-left');
 }
 
 function openNotify() {
-    profile();
     notify();
+    profile();
+    setting();
 }

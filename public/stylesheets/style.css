@@ -26,6 +26,8 @@ img {
     --font-color-inv: #ffffff;
     --color-primary-gra: linear-gradient(0deg, #87c198 0%, #0367cc 39%);
     --shadow: #00000034;
+    --color-page-headers: #e4e1e1;
+    --color-page-body: #f1eeee;
 }
 
 .theme-dark {
@@ -37,6 +39,8 @@ img {
     --font-color-inv: #000000;
     --color-primary-gra: linear-gradient(0deg, #0367cc 0%, #17ed90 39%);
     --shadow: #ffffff34;
+    --color-page-headers: rgb(32, 32, 32);
+    --color-page-body: #131212;
 }
 
 .body-theme {
@@ -534,7 +538,7 @@ footer {
     opacity: 0;
 }
 
-.profile {
+.page-wrapper {
     position: fixed;
     width: 100%;
     top: 0;
@@ -554,14 +558,6 @@ footer {
 
 .page-headline {
     font-weight: bold;
-}
-
-.main-profile {
-    border-radius: 5px;
-    background-color: var(--color-secondary-semi);
-    box-shadow: 0 0 7px var(--shadow);
-    width: 100%;
-    margin-bottom: 100px;
 }
 
 .profile-sq-image {
@@ -607,7 +603,7 @@ footer {
 }
 
 .profile-form input {
-    background-color: var(--color-secondary);
+    background-color: var(--color-page-body);
     border: none;
     border-bottom: 2px solid var(--shadow);
     color: var(--font-color);
@@ -726,6 +722,7 @@ footer {
     width: 100%;
     background: var(--color-secondary-semi);
     background-color: var(--color-secondary);
+    padding: 5px !important;
     padding-left: 30px !important;
 }
 
@@ -735,6 +732,7 @@ footer {
     left: 0;
     padding: 7px;
     transform: translateX(18px);
+    color: black;
 }
 
 #myUL {
@@ -745,15 +743,71 @@ footer {
 
 #myUL li {
     list-style: none;
-    padding: 20px;
     border-radius: 5px;
-    background-color: var(--color-secondary-semi);
-    box-shadow: 0 0 5px var(--shadow);
-    margin-bottom: 25px;
+    border-bottom: 1px solid var(--shadow);
+}
+
+#myUL li:last-child {
+    border-bottom: none;
 }
 
 .add-user-btn {
     width: 38px !important;
     border-radius: 50% !important;
     height: 38px;
+}
+
+.wrapper {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.page-header {
+    background-color: var(--color-page-headers);
+}
+
+.page-body ul {
+    padding-inline-start: 0;
+    margin: 0;
+}
+
+.page-body {
+    margin-bottom: 100px;
+}
+
+.page-body li {
+    list-style-type: none;
+    transition: all .50s;
+    cursor: pointer;
+}
+
+.page-body li:hover {
+    background-color: var(--color-page-body);
+}
+
+.profile-nav img {
+    min-height: 100%;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.profile-btn i {
+    position: absolute;
+    right: 0;
+}
+
+.profile-page {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    background-color: var(--color-secondary);
+    height: 100vh;
+    overflow-y: scroll;
 }

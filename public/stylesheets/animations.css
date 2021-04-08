@@ -1528,3 +1528,11 @@
         opacity: 1;
     }
 }
+
+.setting,
+.users,
+.devices,
+.dashboard {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}

@@ -24,7 +24,7 @@ block content
               .col-1.mb-4.pt-4
                 i.lni.lni-user.force-display.main-home-btn
               .col-10.text-left.mb-4.pt-4
-                a(onclick="profile()") Profile
+                a(onclick="users()") Users
               .col-1.mb-4.pt-4
                 i.lni.lni-cog.force-display.main-home-btn
               .col-10.text-left.mb-4.pt-4
@@ -39,7 +39,7 @@ block content
       .row.main-header
         .profile-img.col-2.d-lg-flex.d-xl-flex.justify-content-center
           .profile-img-contn
-            img(src="images/user.png", alt="User Image" loading="lazy" onclick="profile()")
+            img(src="images/user.png", alt="User Image" loading="lazy" onclick="prolify()")
             .notification-dot
               a(title="You have a new message!" onclick="openNotify()")
                 i(onclick="openNotify()").fa.fa-dot
@@ -58,65 +58,94 @@ block content
     .app-container.container-fluid.p-0.control.hide
       .pt-4
         h4.username #{username} these are your devices
-    .app-container.p-0.profile.hide.p-4
-      .profile-page
-        button(onclick="dashboard()").go-back-btn.p-0.pb-3
-          i.lni.lni-arrow-left
-        button(onclick="notify()").messages
-          i.fa.fa-envelope
-        h4.page-headline My Profile
-        p You are the main user.
-        .main-profile.pt-3
-          .row
-            .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0
-              .sq-image
-                img(src="images/user.png", alt="")
-            .col-4.user-details.pt-4
-              p.username.profile-username #{username}
-              p.user-id.pb-0.mb-0 User ID:
-            .col-4.user-stat
-              label#switchPro.switchPro
-                input#sliderPro.stt(type='checkbox')
-                span.sliderPro.roundPro
-          .bt-hr.pb-2
-            hr        
-          .profile-form.pb-5.p-2
-            label(for="Name").container-fluid Name
-              input.container-fluid.mt-3.mb-3.p-3(type="text" name="Name" value=username disabled)
-            label(for="Phone").container-fluid Phone
-              input.container-fluid.mt-3.mb-3.p-3(type="text" name="Phone" value=phone disabled)
-            label(for="Email").container-fluid Email
-              input.container-fluid#ProfileEmail.mt-3.mb-3.p-3(type="text" name="Email" value=email disabled)
-            .text-center.container-fluid.pt-4
-              .row.p-0.m-0
-                .col-10.p-0.m-0
-                  button.text-center.p-2
-                    .row
-                      .col-8 
-                        span Edit
-                      .col-4.profile-edit
-                        i.fa.fa-edit
-                .col-2.p-0.m-0
-                  button.add-user-btn(title="Add a new user" onclick="profilemodal()")
-                    i.fa.fa-user-plus
-      .notification-page.p-4
-        .row
-          .col-2.text-center
-            button(onclick="unnotify()").go-back-btn.p-0.pb-3
-              i.lni.lni-arrow-left
-          .col-10 
-            input.form-control.search-chat#myInput(type='text' onkeyup='SearchChat()' placeholder='Search conversations')
-            span.search-chat-mag
-              i.lni.lni-search
-        .container-fluid.m-0.p-0.cl.mt-3
-          ul#myUL
-            li
-              span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            li
-              span House Group Chat
-    .app-container.container-fluid.p-0.settings.hide
-      .pt-4
-        h4.username #{username} this is your setting page
+    .app-container.p-0.users.hide.p-4.page-wrapper
+      h1 users
+    .app-container.container-fluid.pl-0.pr-0.settings.hide.page-wrapper.pt-0
+      .container-fluid.page-wrapper-contn.p-0
+        .wrapper.pt-0
+          .container-fluid.p-0
+            .row.page-header.pt-2.pl-3.pr-3
+              .col-2
+                button(onclick="dashboard()").go-back-btn.p-0
+                  i.lni.lni-arrow-left
+              .col-8.text-center
+                p.page-headline.p-1 Settings
+              .col-2.text-right.pr-1
+                button.messages.p-0
+                  i.lni.lni-more
+            .row.page-body.p-0
+              .col-12.p-0
+                ul.p-0
+                  li(onclick="profile()").p-1.pl-4.pr-4
+                    .container-fluid.p-2
+                      .row.p-0
+                        .col-2.p-1.d-flex.justify-content-center.profile-nav
+                          img(src="/images/user.png", alt="")
+                        .col-8.pt-1.align-items-center
+                          h5.username #{username}
+                          span.text-muted View Profile
+                        .col-2.d-flex.align-items-center.justify-content-right.profile-btn
+                          i.lni.lni-chevron-right
+        .profile-page.pl-3.pr-3.pt-0
+          .row.page-header.pt-2.pl-3.pr-3
+            .col-2
+              button(onclick="gobacktosettingsfromprofile()").go-back-btn.p-0
+                i.lni.lni-arrow-left
+            .col-8.text-center
+              p.page-headline.p-1 Profile                      
+            .col-2.text-right.pr-1
+              button(onclick="notify()").messages.p-0
+                i.fa.fa-envelope
+          .page-body.p-0
+            .row.pl-2
+              .col-4.profile-sq-image.pt-3.pb-3.pr-0.mr-0.pl-4
+                .sq-image
+                  img(src="images/user.png", alt="")
+              .col-4.user-details.pt-4
+                p.username.profile-username #{username}
+                p.user-id.pb-0.mb-0 User ID:
+              .col-4.user-stat
+                label#switchPro.switchPro
+                  input#sliderPro.stt(type='checkbox')
+                  span.sliderPro.roundPro
+            .bt-hr.pb-2
+              hr        
+            .profile-form.pb-5.p-2
+              label(for="Name").container-fluid Name
+                input.container-fluid.mt-3.mb-3.p-3(type="text" name="Name" value=username disabled)
+              label(for="Phone").container-fluid Phone
+                input.container-fluid.mt-3.mb-3.p-3(type="text" name="Phone" value=phone disabled)
+              label(for="Email").container-fluid Email
+                input.container-fluid#ProfileEmail.mt-3.mb-3.p-3(type="text" name="Email" value=email disabled)
+              .text-center.container-fluid.pt-4
+                .row.p-0.m-0
+                  .col-10.p-0.m-0
+                    button.text-center.p-2
+                      .row
+                        .col-8 
+                          span Edit
+                        .col-4.profile-edit
+                          i.fa.fa-edit
+                  .col-2.p-0.m-0
+                    button.add-user-btn(title="Add a new user" onclick="profilemodal()")
+                      i.fa.fa-user-plus
+      .notification-page
+        .container-fluid
+          .row.page-header.pt-2.pl-3.pr-3.pb-2
+                .col-1
+                  button(onclick="unnotify()").go-back-btn.p-0
+                    i.lni.lni-arrow-left
+                .col-11.pr-0
+                  input.form-control.search-chat#myInput(type='text' onkeyup='SearchChat()' placeholder='Search conversations')
+                  span.search-chat-mag
+                    i.lni.lni-search
+          .page-body         
+            .container-fluid.m-0.p-0.cl.mt-3
+              ul#myUL
+                li
+                  span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                li
+                  span House Group Chat
   include modals
   include footer
         
