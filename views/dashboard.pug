@@ -58,6 +58,11 @@ block content
     .app-container.container-fluid.p-0.control.hide
       .pt-4
         h4.username #{username} these are your devices
+          label.toggle
+            input(type="checkbox", id="toggleswitch", name="btnD", onclick="switchUpp()")
+            span.roundbutton
+        p#status inaktiv
+        p.switch-res
     .app-container.p-0.users.hide.p-4.page-wrapper
       h1 users
     .app-container.container-fluid.pl-0.pr-0.settings.hide.page-wrapper.pt-0
@@ -106,7 +111,7 @@ block content
                 p.user-id.pb-0.mb-0 User ID:
               .col-4.user-stat
                 label#switchPro.switchPro
-                  input#sliderPro.stt(type='checkbox')
+                  input#sliderPro.stt(type='checkbox' value="off")
                   span.sliderPro.roundPro
             .bt-hr.pb-2
               hr        

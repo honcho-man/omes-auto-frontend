@@ -2,12 +2,21 @@ var express = require('express');
 var hash = require('pbkdf2-password')()
 var path = require('path');
 var session = require('express-session');
+const bodyParser = require("body-parser");
+const http = require("http");
 var app = module.exports = express();
 /* GET home page. */
+app.post('/on', (req, res) => {
+    let btnData = req.body.btnD;
+    console.log(btnData);
+});
+app.post('/off', (req, res) => {
+    let btnData = req.body.btnD;
+    console.log(btnData);
+});
+
 app.get('/test', (req, res) => {
-    const animal = 'alligator';
-    // Send a text/html file back with the word 'alligator' repeated 1000 times
-    res.send(animal.repeat(1000));
+    res.render('test');
 });
 app.get('/contact', function(req, res, next) {
     res.render('contact', { title: 'Contact' });
